@@ -1,0 +1,27 @@
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        int k = 0;
+        for (int num : nums ){
+            if(num != val ){
+                k++;
+            }
+        }
+           
+            int index = 0;
+            int[] numss = new int [k];
+            for(int nnum : nums){
+                if (nnum!= val){
+                    numss[index++] = nnum;
+                }
+            }
+        
+        for(int i =0; i<numss.length; i++){
+            nums[i] = numss[i];
+        }
+        //System.out.print(Arrays.toString(nums));
+        
+        return k;
+         
+    }
+   
+}
