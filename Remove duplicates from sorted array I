@@ -1,0 +1,26 @@
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int k = 1;
+        int val = nums[0]; 
+    
+        ArrayList<Integer> nums2 = new ArrayList<>();
+        nums2.add(nums[0]);
+        
+        for(int i =1; i< nums.length; i++){
+            if(nums[i] == val ){
+                continue;
+            }
+            else{
+                nums2.add(nums[i]);
+                val=nums[i];
+                k++;
+                
+            }
+        }
+        for(int i = 0; i< nums2.size(); i++){
+            nums[i] = nums2.get(i);
+        }
+        //System.out.print(k);
+        return k;
+    }
+}
